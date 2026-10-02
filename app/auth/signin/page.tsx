@@ -52,7 +52,7 @@ export default function SignIn() {
             Welcome Back
           </CardTitle>
           <p className="text-[#0F110C]/70 mt-2">
-            Sign in to your HabitTracker account
+            Sign in to your HabitFlow account
           </p>
         </CardHeader>
 

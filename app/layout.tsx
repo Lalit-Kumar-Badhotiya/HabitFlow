@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "HabitTracker - AI-Powered Habit Tracking",
+  title: "HabitFlow - AI-Powered Habit Tracking",
   description: "Transform your habits with AI-powered insights and beautiful tracking",
 };
 

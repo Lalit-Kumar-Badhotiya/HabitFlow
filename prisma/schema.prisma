@@ -1,27 +1,25 @@
-// prisma/schema.prisma
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String   @id @default(cuid())
-  name      String?
-  email     String   @unique
-  password String?
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?
   emailVerified DateTime?
-  image String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  accounts Account[]
-  sessions Session[]
-  habits    Habit[]
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  habits        Habit[]
+  sessions      Session[]
 
-  // @@index([email])
   @@map("users")
 }
 
@@ -31,20 +29,18 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map("accounts")
 }
-
 
 model Session {
   id           String   @id @default(cuid())
@@ -60,16 +56,14 @@ model Habit {
   id          String    @id @default(cuid())
   title       String
   description String?
-  inputText   String    // Raw user input like "ran 3 miles"
-  parsedData  Json?    // AI-parsed structured data
+  inputText   String
+  parsedData  Json?
   userId      String
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   completedAt DateTime?
-  streak      Int       @default(0) // Current streak count
-
-
+  streak      Int       @default(0)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([userId, createdAt])

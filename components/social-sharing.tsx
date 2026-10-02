@@ -61,7 +61,7 @@ export function SocialSharing({ habits, completionRate }: SocialSharingProps) {
     [habits]
   );
 
-  const shareText = `I've completed ${completionRate}% of my ${habits.length} habits today! 🚀 Track habits with HabitTracker.`;
+  const shareText = `I've completed ${completionRate}% of my ${habits.length} habits today! 🚀 Track habits with HabitFlow.`;
 
   const shareOnTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;

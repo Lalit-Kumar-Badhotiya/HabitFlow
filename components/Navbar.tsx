@@ -48,7 +48,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 select-none">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-r from-[#612940] to-[#9D6381] animate-pulse" />
             <span className="text-xl font-extrabold bg-gradient-to-r from-[#612940] to-[#9D6381] bg-clip-text text-transparent tracking-tight">
-              HabitTracker
+              HabitFlow
             </span>
           </div>
         </div>
@@ -72,7 +72,7 @@ export function Navbar() {
             <span className="text-[#FDECEF] font-bold text-sm">HT</span>
           </div>
           <span className="text-xl font-extrabold bg-gradient-to-r from-[#612940] to-[#9D6381] bg-clip-text text-transparent tracking-tight">
-            HabitTracker
+            HabitFlow
           </span>
         </Link>
 

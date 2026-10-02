@@ -320,7 +320,7 @@ export default function Home() {
             Loved by Builders
           </h2>
           <p className="text-center text-[#0F110C]/70 mt-3 max-w-2xl mx-auto">
-            Developers, creators, and learners use HabitTracker daily to stay consistent.
+            Developers, creators, and learners use HabitFlow daily to stay consistent.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
